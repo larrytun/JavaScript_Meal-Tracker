@@ -4,11 +4,15 @@ import { Entry } from './entry.model';
 @Component({
   selector: 'edit-entry',
   template: `
-    <div class="col-xs-6">
+    <div class="col-xs-5">
       <div class="well">
         <div class="edit-entry">
           <div *ngIf="childSelectedEntry">
             <h1>Edit Entry</h1>
+            <div class="form-group">
+              <label>Enter Entry Date:</label><br>
+              <input [(ngModel)]="childSelectedEntry.date">
+            </div>
             <div class="form-group">
               <label>Enter Entry Food:</label><br>
               <input [(ngModel)]="childSelectedEntry.food">
