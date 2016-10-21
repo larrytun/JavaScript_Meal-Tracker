@@ -1,0 +1,21 @@
+{
+  "name": "meal-tracker",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Larry Tunseth <larrydeantun@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/larrytun/Meal-Tracker",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "angularjs#^1.5.8"
+  }
+}
