@@ -2,7 +2,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 import { Entry } from './entry.model';
 
 @Pipe({
-  name: "calories",
+  name: "fatty",
   pure: false
 })
 
