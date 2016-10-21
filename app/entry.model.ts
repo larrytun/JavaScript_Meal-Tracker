@@ -1,3 +1,3 @@
 export class Entry {
-  constructor(public food: string, public calories: number, public description: string) {   }
+  constructor(public date: string, public food: string, public calories: number, public description: string) {   }
 }
