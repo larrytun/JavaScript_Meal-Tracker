@@ -12,7 +12,7 @@ _This application allows you to write details about a meal and add it to a food 
 
 * _Clone this repository_
 * _Open an HTTP server in the cloned directory_
-* _Run these in the top level of project directory in the terminal: "npm install", "bower install", "gulp build", and "gulp serve"_
+* _Run these in the top level of project directory in the terminal: "npm install", "npm install typescript -g", "apm install atom-typescript", "bower install", "gulp build", and "gulp serve"_
 * _Link to repository: 'https://github.com/larrytun/Meal-Tracker'_
 
 
