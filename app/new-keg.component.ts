@@ -1,35 +1,29 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Keg } from './keg.model'
+import { Entry } from './entry.model'
 
 @Component({
-  selector: 'new-keg',
+  selector: 'new-entry',
   template: `
     <div class="col-xs-6">
       <div class="well">
-        <h1>New Keg</h1>
+        <h1>New Entry</h1>
         <div class="form-group">
-          <label>Enter Keg Brand:</label><br>
-          <input #newBrand>
+          <label>Enter Food Type:</label><br>
+          <input #newFood>
         </div>
         <div class="form-group">
-          <label>Enter Beer Name:</label><br>
-          <input #newName>
+          <label>Enter Calories:</label><br>
+          <input #newCalories>
         </div>
         <div class="form-group">
-          <label>Enter Pint Price:</label><br>
-          <input #newPrice>
-        </div>
-        <div class="form-group">
-          <label>Enter Alcohol %:</label><br>
-          <input #newAbv>
-          <br>
+          <label>Enter Description:</label><br>
+          <input #newDescription>
           <button (click)="
-          addClicked(newBrand.value, newName.value, newPrice.value, newAbv.value);
-          newBrand.value='';
-          newName.value='';
-          newPrice.value='';
-          newAbv.value='';
-          " class="add-keg btn btn-danger">Add</button>
+          addClicked(newFood.value, newCalories.value, newDescription.value);
+          newFood.value='';
+          newCalories.value='';
+          newDescription.value='';
+          " class="add-entry btn btn-danger">Add</button>
         </div>
       </div>
     </div>
@@ -37,10 +31,10 @@ import { Keg } from './keg.model'
   `
 })
 
-export class NewKegComponent {
-  @Output() newKegSender = new EventEmitter();
-  addClicked(brand: string, name: string, price: number, abv: number) {
-    var newKegToAdd: Keg = new Keg(brand, name, price, abv);
-    this.newKegSender.emit(newKegToAdd);
+export class NewEntryComponent {
+  @Output() newEntrySender = new EventEmitter();
+  addClicked(food: string, calories: number, description: string) {
+    var newEntryToAdd: Entry = new Entry(food, calories, description);
+    this.newEntrySender.emit(newEntryToAdd);
   }
 }

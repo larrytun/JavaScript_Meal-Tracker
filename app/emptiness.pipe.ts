@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import { Keg } from './keg.model';
+import { Entry } from './entry.model';
 
 @Pipe({
   name: "emptiness",
@@ -7,8 +7,8 @@ import { Keg } from './keg.model';
 })
 
 export class EmptinessPipe implements PipeTransform {
-  transform(input: Keg[], desiredFullness) {
-    var output: Keg[] = [];
+  transform(input: Entry[], desiredFullness) {
+    var output: Entry[] = [];
     for(var i = 0; i < input.length; i++){
       if(input[i].pintsLeft <= 0){
         console.log("Warning! " + input[i].name + " is empty")

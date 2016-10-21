@@ -1,27 +1,27 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Keg } from './keg.model';
+import { Entry } from './entry.model';
 
 @Component({
   selector: 'pour-beer',
   template:`
-    <button (click)="pourButtonClicked(childKeg)"
+    <button (click)="pourButtonClicked(childEntry)"
     id="pourButton"
     class="btn btn-danger"
     >Pour Beer</button>
-    <button (click)="swapKeg(childKeg)"
+    <button (click)="swapEntry(childEntry)"
     id="swapButton"
     class="btn btn-danger"
-    >Swap Keg</button>
+    >Swap Entry</button>
   `
 })
 
 export class PourBeerComponent {
-  @Input() childKeg: Keg;
+  @Input() childEntry: Entry;
   @Output() pourBeerSender = new EventEmitter();
-  pourButtonClicked(childKeg) {
-    childKeg.pintsLeft -=1;
+  pourButtonClicked(childEntry) {
+    childEntry.pintsLeft -=1;
   }
-  swapKeg(childKeg) {
-    childKeg.pintsLeft = 124;
+  swapEntry(childEntry) {
+    childEntry.pintsLeft = 124;
   }
 }

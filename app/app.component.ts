@@ -1,49 +1,49 @@
 import { Component } from '@angular/core';
-import { Keg } from './keg.model';
+import { Entry } from './entry.model';
 
 @Component({
   selector: 'my-app',
   template: `
   <div class="container body">
     <div class="jumbotron">
-      <h1>Beer Bar</h1>
+      <h1>Food Blog</h1>
     </div>
-    <new-keg
-      (newKegSender)="addKeg($event)"
-    ></new-keg>
-    <edit-keg
-      [childSelectedKeg]="selectedKeg"
+    <new-entry
+      (newEntrySender)="addEntry($event)"
+    ></new-entry>
+    <edit-entry
+      [childSelectedEntry]="selectedEntry"
       (doneClickedSender)="finishedEditing()"
-    ></edit-keg>
-    <keg-list
-      [childKegList]="masterKegList"
+    ></edit-entry>
+    <entry-list
+      [childEntryList]="masterEntryList"
       (clickSender)="showDetails($event)"
-      ></keg-list>
+      ></entry-list>
   </div>
 
   `
 })
 
 export class AppComponent {
-  public masterKegList: Keg[] = [
-    new Keg("Hop Slice Session IPA", "Deschutes", 5, 4.5),
-    new Keg("Mosaic Fresh Hop Fresh Squeezed", "Deschutes", 6, 5.8),
-    new Keg("Sage Flight IPA", "Deschutes", 6, 9),
-    new Keg("Call Me! A Blondie Ale", "Widmer Brothers", 4, 4.3),
-    new Keg("Monster Mash Imperial Porter", "Lompoc", 6, 8),
-    new Keg("IPA", "Backpedal Brewing", 5.5, 5),
-    new Keg("Black Widow Porter", "McMenamins", 5.75, 6.7),
-    new Keg("Dream Girl Summer Ale", "McMenamins", 5, 4.1),
-    new Keg("Chronically ILL", "Great Notion Brewing", 7, 10),
+  public masterEntryList: Entry[] = [
+    new Entry("Hop Slice Session IPA", "Deschutes", 5, 4.5),
+    new Entry("Mosaic Fresh Hop Fresh Squeezed", "Deschutes", 6, 5.8),
+    new Entry("Sage Flight IPA", "Deschutes", 6, 9),
+    new Entry("Call Me! A Blondie Ale", "Widmer Brothers", 4, 4.3),
+    new Entry("Monster Mash Imperial Porter", "Lompoc", 6, 8),
+    new Entry("IPA", "Backpedal Brewing", 5.5, 5),
+    new Entry("Black Widow Porter", "McMenamins", 5.75, 6.7),
+    new Entry("Dream Girl Summer Ale", "McMenamins", 5, 4.1),
+    new Entry("Chronically ILL", "Great Notion Brewing", 7, 10),
   ];
-  selectedKeg: Keg = null;
-  showDetails(clickedKeg: Keg) {
-    this.selectedKeg = clickedKeg;
+  selectedEntry: Entry = null;
+  showDetails(clickedEntry: Entry) {
+    this.selectedEntry = clickedEntry;
   }
   finishedEditing() {
-    this.selectedKeg = null;
+    this.selectedEntry = null;
   }
-  addKeg(newKegFromChild: Keg) {
-    this.masterKegList.push(newKegFromChild);
+  addEntry(newEntryFromChild: Entry) {
+    this.masterEntryList.push(newEntryFromChild);
   }
 }

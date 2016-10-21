@@ -2,9 +2,9 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { AppComponent }   from './app.component';
-import { KegListComponent } from './keg-list.component';
-import { EditKegComponent } from './edit-keg.component';
-import { NewKegComponent } from './new-keg.component';
+import { EntryListComponent } from './entry-list.component';
+import { EditEntryComponent } from './edit-entry.component';
+import { NewEntryComponent } from './new-entry.component';
 import { EmptinessPipe } from './emptiness.pipe';
 import { PourBeerComponent } from './pour-beer.component';
 
@@ -15,9 +15,9 @@ import { PourBeerComponent } from './pour-beer.component';
   ],
   declarations: [
     AppComponent,
-    KegListComponent,
-    EditKegComponent,
-    NewKegComponent,
+    EntryListComponent,
+    EditEntryComponent,
+    NewEntryComponent,
     EmptinessPipe,
     PourBeerComponent,
   ],

@@ -1,30 +1,25 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Keg } from './keg.model';
+import { Entry } from './entry.model';
 
 @Component({
-  selector: 'edit-keg',
+  selector: 'edit-entry',
   template: `
     <div class="col-xs-6">
       <div class="well">
-        <div class="edit-keg">
-          <div *ngIf="childSelectedKeg">
-            <h1>Edit Keg</h1>
+        <div class="edit-entry">
+          <div *ngIf="childSelectedEntry">
+            <h1>Edit Entry</h1>
             <div class="form-group">
-              <label>Enter Keg Brand:</label><br>
-              <input [(ngModel)]="childSelectedKeg.brand">
+              <label>Enter Entry Food:</label><br>
+              <input [(ngModel)]="childSelectedEntry.food">
             </div>
             <div class="form-group">
-              <label>Enter Beer Name:</label><br>
-              <input [(ngModel)]="childSelectedKeg.name">
+              <label>Enter Calories:</label><br>
+              <input [(ngModel)]="childSelectedEntry.calories">
             </div>
             <div class="form-group">
-              <label>Enter Pint Price:</label><br>
-              <input [(ngModel)]="childSelectedKeg.price">
-            </div>
-            <div class="form-group">
-              <label>Enter Alcohol %:</label><br>
-              <input [(ngModel)]="childSelectedKeg.abv">
-              <br>
+              <label>Enter Description:</label><br>
+              <input [(ngModel)]="childSelectedEntry.description">
               <button (click)="doneClicked()"
               class="btn btn-danger">Done</button>
             </div>
@@ -35,8 +30,8 @@ import { Keg } from './keg.model';
   `
 })
 
-export class EditKegComponent {
-  @Input() childSelectedKeg: Keg;
+export class EditEntryComponent {
+  @Input() childSelectedEntry: Entry;
   @Output() doneClickedSender = new EventEmitter();
   doneClicked() {
     this.doneClickedSender.emit();

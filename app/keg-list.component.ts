@@ -1,9 +1,9 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Keg } from './keg.model';
+import { Entry } from './entry.model';
 import { PourBeerComponent } from './pour-beer.component';
 
 @Component({
-  selector: 'keg-list',
+  selector: 'entry-list',
   template: `
   <div class="row">
     <div id="options" class="col-xs-6 col-xs-offset-5">
@@ -14,18 +14,18 @@ import { PourBeerComponent } from './pour-beer.component';
       </select>
     </div>
   </div>
-  <div *ngFor="let currentKeg of childKegList | emptiness:selectedEmptiness">
+  <div *ngFor="let currentEntry of childEntryList | emptiness:selectedEmptiness">
     <div id="list" class="col-xs-4">
-      <div [class.cheapBeer]="currentKeg.price < 5.5">
-      <div [class.tipsyBeer]="currentKeg.abv > 6">
-      <div [class.beer]="currentKeg.price > 0">
-        <h3>{{ currentKeg.brand }}</h3>
-        <h4>{{currentKeg.name}}</h4>
-        <p>Cost: $ {{currentKeg.price}}</p>
-        <p>ABV: {{currentKeg.abv}}%</p>
-        <p>Pints until empty: {{currentKeg.pintsLeft}}</p>
-        <pour-beer [childKeg]="currentKeg"></pour-beer>
-        <button (click)="editButtonHasBeenClicked(currentKeg)"
+      <div [class.cheapBeer]="currentEntry.price < 5.5">
+      <div [class.tipsyBeer]="currentEntry.abv > 6">
+      <div [class.beer]="currentEntry.price > 0">
+        <h3>{{ currentEntry.brand }}</h3>
+        <h4>{{currentEntry.name}}</h4>
+        <p>Cost: $ {{currentEntry.price}}</p>
+        <p>ABV: {{currentEntry.abv}}%</p>
+        <p>Pints until empty: {{currentEntry.pintsLeft}}</p>
+        <pour-beer [childEntry]="currentEntry"></pour-beer>
+        <button (click)="editButtonHasBeenClicked(currentEntry)"
         class="btn btn-danger"
         id="editButton">Edit</button>
       </div>
@@ -36,15 +36,15 @@ import { PourBeerComponent } from './pour-beer.component';
   `
 })
 
-export class KegListComponent {
-  @Input() childKegList: Keg[];
+export class EntryListComponent {
+  @Input() childEntryList: Entry[];
   @Output() clickSender = new EventEmitter();
   public selectedEmptiness: string = "all";
   onChange(optionFromMenu){
     this.selectedEmptiness = optionFromMenu;
     console.log(this.selectedEmptiness);
   }
-  editButtonHasBeenClicked(kegToEdit: Keg) {
-    this.clickSender.emit(kegToEdit);
+  editButtonHasBeenClicked(entryToEdit: Entry) {
+    this.clickSender.emit(entryToEdit);
   }
 }
