@@ -4,9 +4,9 @@ import { Entry } from './entry.model';
 @Component({
   selector: 'entry-list',
   template: `
-  <div class="row">
-    <div id="options" class="col-xs-6 col-xs-offset-5">
-      <select id="dropDown" (change)="onChange($event.target.value)" class="selectpicker">
+  <div class="dropdown">
+    <div id="options" class="well col-xs-5">
+      <select id="dropDown" (change)="onChange($event.target.value)" class="dropdown">
         <option value="all" selected="selected">Show All</option>
         <option value="low">Show low calories</option>
         <option value="high">Show high calories</option>
@@ -14,7 +14,8 @@ import { Entry } from './entry.model';
     </div>
   </div>
   <div *ngFor="let currentEntry of childEntryList | fatty:selectedCalories">
-    <div id="list" class="col-xs-4">
+    <div id="list" class="col-xs-12 well">
+      <h4>{{currentEntry.date}}</h4>
       <h3>{{currentEntry.food}}</h3>
       <h4>Calories: {{currentEntry.calories}}</h4>
       <p>Description: {{currentEntry.description}}
