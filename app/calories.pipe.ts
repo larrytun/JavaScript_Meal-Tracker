@@ -10,20 +10,20 @@ export class CaloriesPipe implements PipeTransform {
   transform(input: Entry[], desiredCalories) {
     var output: Entry[] = [];
     for(var i = 0; i < input.length; i++){
-      if(input[i].totalCalories <= 0){
+      if(input[i].calories <= 0){
         console.log("Calories")
       }
     }
     if(desiredCalories === "low"){
       for(var i = 0; i < input.length; i++){
-        if(input[i].totalCalories < 350){
+        if(input[i].calories < 350){
           output.push(input[i]);
         }
       }
       return output;
     }else if(desiredCalories === "high"){
       for(var i = 0; i <input.length; i++){
-        if(input[i].totalCalories >= 350){
+        if(input[i].calories >= 350){
           output.push(input[i]);
         }
       }
