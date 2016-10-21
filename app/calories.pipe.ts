@@ -2,28 +2,28 @@ import {Pipe, PipeTransform} from '@angular/core';
 import { Entry } from './entry.model';
 
 @Pipe({
-  name: "emptiness",
+  name: "calories",
   pure: false
 })
 
-export class EmptinessPipe implements PipeTransform {
-  transform(input: Entry[], desiredFullness) {
+export class CaloriesPipe implements PipeTransform {
+  transform(input: Entry[], desiredCalories) {
     var output: Entry[] = [];
     for(var i = 0; i < input.length; i++){
-      if(input[i].pintsLeft <= 0){
-        console.log("Warning! " + input[i].name + " is empty")
+      if(input[i].totalCalories <= 0){
+        console.log("Calories")
       }
     }
-    if(desiredFullness === "almostEmpty"){
+    if(desiredCalories === "low"){
       for(var i = 0; i < input.length; i++){
-        if(input[i].pintsLeft < 10){
+        if(input[i].totalCalories < 350){
           output.push(input[i]);
         }
       }
       return output;
-    }else if(desiredFullness === "full"){
+    }else if(desiredCalories === "high"){
       for(var i = 0; i <input.length; i++){
-        if(input[i].pintsLeft >= 10){
+        if(input[i].totalCalories >= 350){
           output.push(input[i]);
         }
       }

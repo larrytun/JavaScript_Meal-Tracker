@@ -26,15 +26,9 @@ import { Entry } from './entry.model';
 
 export class AppComponent {
   public masterEntryList: Entry[] = [
-    new Entry("Hop Slice Session IPA", "Deschutes", 5, 4.5),
-    new Entry("Mosaic Fresh Hop Fresh Squeezed", "Deschutes", 6, 5.8),
-    new Entry("Sage Flight IPA", "Deschutes", 6, 9),
-    new Entry("Call Me! A Blondie Ale", "Widmer Brothers", 4, 4.3),
-    new Entry("Monster Mash Imperial Porter", "Lompoc", 6, 8),
-    new Entry("IPA", "Backpedal Brewing", 5.5, 5),
-    new Entry("Black Widow Porter", "McMenamins", 5.75, 6.7),
-    new Entry("Dream Girl Summer Ale", "McMenamins", 5, 4.1),
-    new Entry("Chronically ILL", "Great Notion Brewing", 7, 10),
+    new Entry("Pizza", 350, "I had one big slice of pizza"),
+    new Entry("Hot Dogs", 400, "I ate 3 kosher hot dogs"),
+    new Entry("Chicken Salad", 320, "I ate half a chicken salad"),
   ];
   selectedEntry: Entry = null;
   showDetails(clickedEntry: Entry) {

@@ -5,8 +5,7 @@ import { AppComponent }   from './app.component';
 import { EntryListComponent } from './entry-list.component';
 import { EditEntryComponent } from './edit-entry.component';
 import { NewEntryComponent } from './new-entry.component';
-import { EmptinessPipe } from './emptiness.pipe';
-import { PourBeerComponent } from './pour-beer.component';
+import { CaloriesPipe } from './calories.pipe';
 
 @NgModule({
   imports: [
@@ -18,8 +17,7 @@ import { PourBeerComponent } from './pour-beer.component';
     EntryListComponent,
     EditEntryComponent,
     NewEntryComponent,
-    EmptinessPipe,
-    PourBeerComponent,
+    CaloriesPipe,
   ],
   bootstrap:    [ AppComponent ]
 })
