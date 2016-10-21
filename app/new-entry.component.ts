@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Entry } from './entry.model'
+import { Entry } from './entry.model';
 
 @Component({
   selector: 'new-entry',

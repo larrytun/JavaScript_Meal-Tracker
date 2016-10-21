@@ -15,15 +15,12 @@ import { Entry } from './entry.model';
   </div>
   <div *ngFor="let currentEntry of childEntryList | fatty:selectedCalories">
     <div id="list" class="col-xs-4">
-        <h3>{{currentEntry.food }}</h3>
-        <h4>Calories: {{currentEntry.calories}}</h4>
-        <p>Description: $ {{currentEntry.description}}
-        <button (click)="editButtonHasBeenClicked(currentEntry)"
-        class="btn btn-danger"
-        id="editButton">Edit</button>
-      </div>
-      </div>
-      </div>
+      <h3>{{currentEntry.food }}</h3>
+      <h4>Calories: {{currentEntry.calories}}</h4>
+      <p>Description: {{currentEntry.description}}
+      <button (click)="editButtonHasBeenClicked(currentEntry)"
+      class="btn btn-danger"
+      id="editButton">Edit</button>
     </div>
   </div>
   `
