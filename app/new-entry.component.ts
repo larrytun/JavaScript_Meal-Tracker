@@ -7,19 +7,26 @@ import { Entry } from './entry.model';
     <div class="col-xs-6">
       <div class="well">
         <h1>New Entry</h1>
-        <div class="form-group">
+        <div class="well form-group">
+          <label>Enter Date:</label><br>
+          <input #newDate>
+        </div>
+        <div class="well form-group">
           <label>Enter Food Type:</label><br>
           <input #newFood>
         </div>
-        <div class="form-group">
+        <div class="well form-group">
           <label>Enter Calories:</label><br>
           <input #newCalories>
         </div>
-        <div class="form-group">
+        <div class="well form-group">
           <label>Enter Description:</label><br>
           <input #newDescription>
-          <button (click)="
-          addClicked(newFood.value, newCalories.value, newDescription.value);
+        </div>
+        <div>
+          <button id="addButton" (click)="
+          addClicked(newDate.value, newFood.value, newCalories.value, newDescription.value);
+          newDate.value='';
           newFood.value='';
           newCalories.value='';
           newDescription.value='';
@@ -33,8 +40,8 @@ import { Entry } from './entry.model';
 
 export class NewEntryComponent {
   @Output() newEntrySender = new EventEmitter();
-  addClicked(food: string, calories: number, description: string) {
-    var newEntryToAdd: Entry = new Entry(food, calories, description);
+  addClicked(date: string, food: string, calories: number, description: string) {
+    var newEntryToAdd: Entry = new Entry(date, food, calories, description);
     this.newEntrySender.emit(newEntryToAdd);
   }
 }
