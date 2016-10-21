@@ -42,7 +42,7 @@ gulp.task('jsBowerClean', function(){
 
 gulp.task('jsBower', ['jsBowerClean'], function() {
   return gulp.src(lib.ext('js').files)
-    // .pipe(concat('vendor.min.js'))
+    .pipe(concat('vendor.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./build/js'));
 });
@@ -53,7 +53,7 @@ gulp.task('cssBowerClean', function(){
 
 gulp.task('cssBower', ['cssBowerClean'], function() {
   return gulp.src(lib.ext('css').files)
-    // .pipe(concat('vendor.css'))
+    .pipe(concat('vendor.css'))
     .pipe(gulp.dest('./build/css'));
 });
 
